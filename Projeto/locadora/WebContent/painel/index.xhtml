@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="charset=utf-8" />
+	<title>Locadora - ZEO Vídeo</title>
+	<link type="text/css" rel="stylesheet" href="../css/style.css" />
+
+	<style type="text/css">
+.gridPanel tr,td {
+	border: none !important;
+}
+
+.ui-widget {
+	font-size: 12px !important;
+}
+</style>
+
+
+</h:head>
+<h:body>
+	<p:panel footer="ZeO - Vídeo Locadora">
+
+		<h:form id="formMenuBar">
+			<!-- ========================== Barra de Menu ========================== -->
+			<p:menubar autoDisplay="false">
+				<p:submenu label="Cadastro">
+					<p:menuitem value="Empresa" onclick="PF('dlgCadEmpresa').show();"
+						icon="ui-icon-circle-plus" />
+					<p:menuitem value="Cliente" onclick="PF('dlgCadCliente').show();"
+						icon="ui-icon-circle-plus" />
+					<p:menuitem value="Funcionario"
+						onclick="PF('dlgCadFuncionario').show();"
+						icon="ui-icon-circle-plus" />
+					<p:menuitem value="Genero" onclick="PF('dlgCadGenero').show();"
+						icon="ui-icon-circle-plus" />
+					<p:menuitem value="Midia" onclick="PF('dlgCadMidia').show();"
+						icon="ui-icon-circle-plus" />
+				</p:submenu>
+				<p:submenu label="Listagem" icon="ui-icon-print">
+					<p:menuitem value="Cliente" icon="ui-icon-document" />
+					<p:menuitem value="Funcionario" icon="ui-icon-document" />
+					<p:menuitem value="Genero" icon="ui-icon-document" />
+					<p:menuitem value="Midia" icon="ui-icon-document" />
+					<p:submenu label="Movimentação">
+						<p:menuitem value="Emprestimo" icon="ui-icon-document" />
+						<p:menuitem value="Devolução" icon="ui-icon-document" />
+						<p:menuitem value="Descarte" icon="ui-icon-document" />
+					</p:submenu>
+				</p:submenu>
+				<p:submenu label="Movimentação" icon="ui-icon-cart">
+					<p:menuitem value="Emprestimo" icon="ui-icon-arrowthick-1-e" />
+					<p:menuitem value="Devolução" icon="ui-icon-arrowthick-1-e" />
+					<p:menuitem value="Descarte" icon="ui-icon-arrowthick-1-e" />
+
+				</p:submenu>
+			</p:menubar>
+		</h:form>
+
+		<h:form id="formContent">
+			<!-- ========================== Cadastro de Empresa ========================== -->
+			<p:dialog id="cadEmpresa" widgetVar="dlgCadEmpresa" width="1000"
+				resizable="false" height="500" modal="true" closable="true"
+				header="Cadastrar Empresa">
+				<ui:include src="cadastro/cadEmpresa.xhtml"></ui:include>
+			</p:dialog>
+
+			<!-- ========================== Cadastro de Cliente ========================== -->
+			<p:dialog id="cadCliente" widgetVar="dlgCadCliente" width="1000"
+				resizable="false" height="500" modal="true" closable="true"
+				header="Cadastrar Cliente">
+				<ui:include src="cadastro/cadCliente.xhtml"></ui:include>
+			</p:dialog>
+
+			<!-- ======================== Cadastro de FUncionario ======================== -->
+			<p:dialog id="cadFuncionario" widgetVar="dlgCadFuncionario"
+				width="1000" resizable="false" height="500" modal="true"
+				closable="true" header="Cadastrar Funcionario">
+				<ui:include src="cadastro/cadFuncionario.xhtml"></ui:include>
+			</p:dialog>
+
+			<!-- ========================== Cadastro de Genero =========================== -->
+			<p:dialog id="cadGenero" widgetVar="dlgCadGenero" width="1000"
+				resizable="false" height="500" modal="true" closable="true"
+				header="Cadastrar Genero">
+				<ui:include src="cadastro/cadGenero.xhtml"></ui:include>
+			</p:dialog>
+
+			<!-- =========================== Cadastro de Midia =========================== -->
+			<p:dialog id="cadMidia" widgetVar="dlgCadMidia" width="1000"
+				resizable="false" height="500" modal="true" closable="true"
+				header="Cadastrar Midia">
+				<ui:include src="cadastro/cadMidia.xhtml"></ui:include>
+			</p:dialog>
+		</h:form>
+
+
+
+		<p:graphicImage styleClass="logo" value="../imgs/logo.png"
+			alt="ZeO Vídeo Locadora"></p:graphicImage>
+
+	</p:panel>
+</h:body>
+</html>
