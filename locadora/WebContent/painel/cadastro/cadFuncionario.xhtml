@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+
+<h:body>
+<h:form id="form" >
+	
+	<p:growl id="growl" showDetail="true" life="3500"/>
+	
+		<p:dialog id="cadCliente" header="Cadastro de Funcionario"
+			widgetVar="cadCliente" modal="true" width="1000" height="500"
+			visible="true" >
+			<p:panelGrid columns="2" styleClass="gridPanel">
+				<p:outputLabel value="Código" for="txtCodigo">
+				</p:outputLabel>
+				<p:inputText id="txtCodigo" readonly="true" autoupdate="growl" ></p:inputText>
+
+				<p:outputLabel value="Nome" for="txtNome" >
+				</p:outputLabel>
+				<p:inputText id="txtNome" required="true" 
+				requiredMessage="Campo NOME obrigatório" ></p:inputText>
+				
+				<p:outputLabel value="Data Admissão" for="txtDataAdm">
+				</p:outputLabel>
+				<p:inputText id="txtDataAdm" type="Date" required="true" 
+				requiredMessage="Campo DATA ADMISSÃO obrigatório"></p:inputText>
+				
+				<p:outputLabel value="CPF" for="txtCpf">
+				</p:outputLabel>
+				<p:inputText id="txtCpf" required="true" 
+				requiredMessage="Campo CPF obrigatório"></p:inputText>
+				
+				<p:outputLabel value="Empresa" for="txtEmpresa">
+				</p:outputLabel>
+				<p:selectOneMenu id="txtEmpresa" required="true" 
+				requiredMessage="Campo EMPRESA obrigatório"></p:selectOneMenu>
+				
+				<p:outputLabel value="Login" for="txtLogin">
+				</p:outputLabel>
+				<p:inputText id="txtLogin" required="true" 
+				requiredMessage="Campo LOGIN obrigatório"></p:inputText>
+				
+				<p:outputLabel value="Senha" for="txtSenha">
+				</p:outputLabel>
+				<p:password id="txtSenha" required="true" 
+				requiredMessage="Campo SENHA obrigatório"></p:password>
+				
+				<p:commandButton id="btnSalvar" value="Salvar" ></p:commandButton>
+			</p:panelGrid>
+		</p:dialog>
+	</h:form>
+	</h:body>
+</html>

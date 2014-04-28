@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<style>
+.gridPanel{
+margin: auto;
+
+}
+.gridPanel tr,td {
+border: none !important;      
+}
+</style>
+
+	<TITLE>Locadora - ZEO Video</TITLE>
+</h:head>
+<h:body>
+	<h:form>
+		<p:menubar>
+			<p:submenu label="Cadastro">
+				<p:menuitem value="Empresa" />
+				<p:menuitem value="Cliente" />
+				<p:menuitem value="Funcionario" />
+				<p:menuitem value="Genero" />
+				<p:menuitem value="Midia" onclick="$('dlg2').show();">
+				</p:menuitem>
+			</p:submenu>
+			<p:submenu label="Listagem">
+				<p:menuitem value="Cliente" />
+				<p:menuitem value="Funcionario" />
+				<p:menuitem value="Genero" />
+				<p:menuitem value="Midia" />
+				<p:submenu label="Movimentação">
+					<p:menuitem value="Emprestimo" />
+					<p:menuitem value="Devolução" />
+					<p:menuitem value="Descarte" />
+				</p:submenu>
+			</p:submenu>
+			<p:submenu label="Movimentação">
+				<p:menuitem value="Emprestimo" />
+				<p:menuitem value="Devolução" />
+				<p:menuitem value="Descarte" />
+
+			</p:submenu>
+		</p:menubar>
+	</h:form>
+</h:body>
+</html>

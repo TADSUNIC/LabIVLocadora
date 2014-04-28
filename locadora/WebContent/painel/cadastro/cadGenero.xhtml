@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+<h:form>
+
+	<p:growl id="growl" showDetail="true" life="3000"/>
+	
+		<p:dialog id="cadGenero" header="Cadastro de Genero"
+			widgetVar="cadGenero" modal="true" width="1000" height="500"
+			visible="true">
+			<p:panelGrid columns="2" styleClass="gridPanel">
+				<p:outputLabel value="Código" for="txtCodigo">
+				</p:outputLabel>
+				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
+
+				<p:outputLabel value="Genero" for="txtGenero">
+				</p:outputLabel>
+				<p:inputText id="txtGenero" required="true" 
+				requiredMessage="Campo GENERO obrigatório" update="growl"></p:inputText>
+							
+				<p:commandButton id="btnSalvar" value="Salvar" ></p:commandButton>
+			</p:panelGrid>
+		</p:dialog>
+
+</h:form>
+
+</h:body>
+</html>
