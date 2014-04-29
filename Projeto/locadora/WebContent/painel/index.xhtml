@@ -25,11 +25,14 @@
 	<p:panel footer="ZeO - Vídeo Locadora">
 
 		<h:form id="formMenuBar">
+
+			<p:growl id="growl" autoUpdate="true" showDetail="true" life="3500" />
+
 			<!-- ========================== Barra de Menu ========================== -->
 			<p:menubar autoDisplay="false">
-				<p:submenu label="Cadastro">
-					<p:menuitem value="Empresa" onclick="PF('dlgCadEmpresa').show();"
-						icon="ui-icon-circle-plus" />
+				<p:submenu label="Cadastro" icon="ui-icon-document">
+					<p:menuitem value="Empresa" url="cadastro/cadEmpresa.jsf"
+						update=":conteudo" icon="ui-icon-circle-plus" />
 					<p:menuitem value="Cliente" onclick="PF('dlgCadCliente').show();"
 						icon="ui-icon-circle-plus" />
 					<p:menuitem value="Funcionario"
@@ -57,8 +60,15 @@
 					<p:menuitem value="Descarte" icon="ui-icon-arrowthick-1-e" />
 
 				</p:submenu>
+
+
+
 			</p:menubar>
+
+			<iframe id="conteudo" ></iframe>
+
 		</h:form>
+
 
 		<h:form id="formContent">
 			<!-- ========================== Cadastro de Empresa ========================== -->
@@ -79,7 +89,7 @@
 			<p:dialog id="cadFuncionario" widgetVar="dlgCadFuncionario"
 				width="1000" resizable="false" height="500" modal="true"
 				closable="true" header="Cadastrar Funcionario">
-				<ui:include src="cadastro/cadFuncionario.xhtml"></ui:include>
+				<ui:include src="cadastro/cadFuncionario.xhtml" />
 			</p:dialog>
 
 			<!-- ========================== Cadastro de Genero =========================== -->

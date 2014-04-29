@@ -9,19 +9,24 @@
 <h:body>
 <h:form id="formCadGenero">
 
-	<p:growl id="growl" autoUpdate="true" showDetail="true" life="3000"/>
+		<p:growl id="growl" showDetail="true" autoUpdate="true" life="3000" />
+
 	
 			<p:panelGrid columns="2" styleClass="gridPanel">
 				<p:outputLabel value="Código" for="txtCodigo">
 				</p:outputLabel>
-				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
+				<p:inputText id="txtCodigo" value="#{generoBean.generoCodigo}" readonly="true"></p:inputText>
 
 				<p:outputLabel value="Genero" for="txtGenero">
 				</p:outputLabel>
 				<p:inputText id="txtGenero" required="true" 
-				requiredMessage="Campo GENERO obrigatório" update="growl"></p:inputText>
+				requiredMessage="Campo GENERO obrigatório"  value="#{generoBean.generoDescricao}" update="growl"></p:inputText>
 							
-				<p:commandButton id="btnSalvar" value="Salvar" update="growl"></p:commandButton>
+				
+				<p:commandButton  id="salvar"
+					update="growl" icon="ui-icon-floppy" value="Salvar"
+					style="width:100px;" />
+				
 			</p:panelGrid>
 
 </h:form>
