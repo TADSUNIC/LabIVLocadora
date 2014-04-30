@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.gridPanel tr, td{
+	border: none !important;
+}
+.logo{
+	position: relative;
+	width: 400px;
+	height: 256px;
+	margin-left: 50%;
+	margin-top: 30%;
+	top: -148px;
+	left: -200px;
+	
+}
