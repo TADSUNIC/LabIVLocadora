@@ -15,8 +15,8 @@
 			<p:panelGrid columns="4" styleClass="gridPanel">
 				<p:outputLabel value="Código" for="txtCodigo">
 				</p:outputLabel>
-				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
-				
+				<p:inputText id="txtCodigo" readonly="true" 
+				value="#{clienteController.cliente.codigo}"/>
 				<p:outputLabel value="Nome" for="txtNome">
 				</p:outputLabel>
 				<p:inputText id="txtNome" required="true"
@@ -80,7 +80,8 @@
 
 				<p:outputLabel value="Telefone" for="txtTelefone">
 				</p:outputLabel>
-				<p:inputMask id="txtTelefone"  mask="(99)9999-9999"
+				<p:inputMask id="txtTelefone"  mask="(99) 9999-9999" required="true"
+					requiredMessage="Campo Telefone Obrigatório" 
 					value="#{clienteController.cliente.telefone}"/>
 
 				<p:outputLabel value="Email" for="txtEmail">
@@ -95,9 +96,13 @@
 					requiredMessage="Campo Dependentes obrigatório"
 					value="#{clienteController.cliente.dependentes}"/>
 				
-				<p:commandButton id="btnSalvar" update="growl" 
-				oncomplete="handleLoginRequest()" value="Cadastrar" icon="ui-icon-circle-check"
-				action="#{clienteController.incluir}"/>
+				<p:commandButton update="growl" oncomplete="handleLoginRequest()" value="Cadastrar" 
+				rendered="#{clienteController.cliente.codigo == null}"
+				icon="ui-icon-circle-check" action="#{clienteController.incluir}"/>
+				
+				<p:commandButton value="Editar" update="growl"  rendered="#{clienteController.cliente.codigo != null}" 
+				icon="ui-icon-pencil" action="#{clienteController.alterar()}"></p:commandButton>
+				
 				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
 			</p:panelGrid>
 		</p:dialog>

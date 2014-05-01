@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13984685251360" configfile="/locadora/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13989670837370" configfile="/locadora/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pergunta/listaPergunta.xhtml" id="pf13989844043660" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13989844043661 pf13989844043662 pf13989844328364" inlinks="pf13989844043662" path="painel/listagem/listCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="painel/cadastro/cadCliente.xhtml" id="pf13989844043663" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13989844043661 pf13989844328364" path="painel/cadastro/cadCliente.xhtml"/>
+  <links id="pf13989844043661" target="pf13989844043663" source="pf13989844043660" outcome="exibirFormularioEditar" redirect="true"/>
+  <links id="pf13989844043662" target="pf13989844043660" source="pf13989844043660" outcome="listar" redirect="true"/>
+  <links id="pf13989844328364" target="pf13989844043663" source="pf13989844043660" outcome="exibirFormularioIncluir" redirect="true"/>
+</pageflow:Pageflow>

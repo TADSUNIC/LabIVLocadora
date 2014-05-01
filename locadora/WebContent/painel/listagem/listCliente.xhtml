@@ -46,8 +46,8 @@
 			<f:facet name="header">
 				<h:outputText value="Ações"></h:outputText>
 			</f:facet>
-			<p:commandButton value="Editar"/>
-		<p:commandButton value="Remover" />
+			<p:commandButton value="Editar" action="#{clienteController.exibirFormularioEditar()}"/>
+		<p:commandButton value="Remover" action="#{clienteController.remover()}"/>
 		</p:column>
 
 	</p:dataTable>

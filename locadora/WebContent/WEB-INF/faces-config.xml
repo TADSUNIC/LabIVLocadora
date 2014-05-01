@@ -6,4 +6,27 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
     version="2.1">
 
+
+<navigation-rule>
+		<from-view-id>painel/listagem/listCliente.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>exibirFormularioIncluir</from-outcome>
+			<to-view-id>painel/cadastro/cadCliente.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>exibirFormularioEditar</from-outcome>
+			<to-view-id>painel/cadastro/cadCliente.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+			<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>painel/listagem/listCliente.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		</navigation-rule>
+
+
+
+
 </faces-config>

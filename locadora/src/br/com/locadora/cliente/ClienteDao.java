@@ -28,7 +28,7 @@ public class ClienteDao {
 					+ "	CLIENTE_BAIRRO,  CLIENTE_CIDADE,  CLIENTE_ESTADO, CLIENTE_TELEFONE, "
 					+ "	CLIENTE_EMAIL,  CLIENTE_NOME_MAE,  "
 					+ "	CLIENTE_NOME_PAI, CLIENTE_DEPENDENTES) ";
-			sql += " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			sql += " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement preparedStatement = conexao.getConn()
 					.prepareStatement(sql);
@@ -79,7 +79,7 @@ public class ClienteDao {
 			preparedStatement.setString(11, cliente.getMae());
 			preparedStatement.setString(12, cliente.getPai());
 			preparedStatement.setInt(13, cliente.getDependentes());
-			preparedStatement.setInt(15, cliente.getCodigo());
+			preparedStatement.setInt(14, cliente.getCodigo());
 			preparedStatement.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
