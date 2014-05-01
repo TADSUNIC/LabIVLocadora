@@ -5,4 +5,62 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 </h:head>
+
+<h:body>
+	<h:form id="formLisCliente">
+
+		<p:growl id="growl" life="3500" />
+		<p:dialog closable="true" visible="true" widgetVar="dlg"
+			header="Clientes Cadastadros">
+<p:dataTable paginator="true" rows="10" 
+   emptyMessage="Não foi encontrado nenhuma informação!">
+		
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Código"></h:outputText>
+			</f:facet>
+			<h:outputText/>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Nome"></h:outputText>
+			</f:facet>
+			<h:outputText/>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Função"></h:outputText>
+			</f:facet>
+			<h:outputText/>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Data da Admissão"></h:outputText>
+			</f:facet>
+			<h:outputText/>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Data da Admissão"></h:outputText>
+			</f:facet>
+			<h:outputText/>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Ações"></h:outputText>
+			</f:facet>
+			<p:commandButton value="Editar"/>
+		<p:commandButton value="Remover" />
+		</p:column>
+
+	</p:dataTable>
+</p:dialog>
+</h:form>
+</h:body>
+
 </html>

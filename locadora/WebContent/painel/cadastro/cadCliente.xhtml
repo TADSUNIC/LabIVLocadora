@@ -15,76 +15,89 @@
 			<p:panelGrid columns="4" styleClass="gridPanel">
 				<p:outputLabel value="Código" for="txtCodigo">
 				</p:outputLabel>
-				<p:inputText id="txtCodigo" readonly="true" ></p:inputText>
+				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
 				
 				<p:outputLabel value="Nome" for="txtNome">
 				</p:outputLabel>
 				<p:inputText id="txtNome" required="true"
-					requiredMessage="Campo Nomw obrigatório"/>
+					requiredMessage="Campo Nomw obrigatório" 
+					value="#{clienteController.cliente.nome}"/>
 					
 				<p:outputLabel value="RG" for="txtRg">
 				</p:outputLabel>
 				<p:inputText id="txtRg" required="true"
-					requiredMessage="Campo RG obrigatório"/>
+					requiredMessage="Campo RG obrigatório"
+					value="#{clienteController.cliente.rg}"/>
 
 				<p:outputLabel value="Cpf" for="txtCpf">
 				</p:outputLabel>
 				<p:inputMask id="txtCpf" required="true" mask="999.999.999-99"
- 					requiredMessage="Campo Cpf obrigatório" maxlength="11" />
+ 					requiredMessage="Campo Cpf obrigatório" maxlength="11" 
+ 					value="#{clienteController.cliente.cpf}"/>
 				
 
 				<p:outputLabel value="Data Nascimento" for="txtDtNascimento">
 				</p:outputLabel>
 				<p:inputText id="txtDtNascimento" type="Date" required="true"
-					requiredMessage="Campo Data Nascimento obrigatório"/>
+					requiredMessage="Campo Data Nascimento obrigatório"
+					value="#{clienteController.cliente.dataNasc}"/>
 
 				<p:outputLabel value="Pai" for="txtNPai">
 				</p:outputLabel>
 				<p:inputText id="txtNPai" required="true"
-					requiredMessage="Campo Pai obrigatório"/>
+					requiredMessage="Campo Pai obrigatório"
+					value="#{clienteController.cliente.pai}"/>
 
 				<p:outputLabel value="Mãe" for="txtNMae">
 				</p:outputLabel>
 				<p:inputText id="txtNMae" required="true"
-					requiredMessage="Campo Mãe obrigatório"/>
+					requiredMessage="Campo Mãe obrigatório"
+					value="#{clienteController.cliente.mae}"/>
 
 				<p:outputLabel value="Endereço" for="txtEndereco">
 				</p:outputLabel>
 				<p:inputText id="txtEndereco" required="true"
-					requiredMessage="Campo Endereco obrigatório"/>
+					requiredMessage="Campo Endereco obrigatório"
+					value="#{clienteController.cliente.endereco}"/>
 
 				<p:outputLabel value="Bairro" for="txtBairro">
 				</p:outputLabel>
 				<p:inputText id="txtBairro" required="true"
-					requiredMessage="Campo Bairro obrigatório"/>
+					requiredMessage="Campo Bairro obrigatório"
+					value="#{clienteController.cliente.bairro}"/>
 
 				<p:outputLabel value="Cidade" for="txtCidade">
 				</p:outputLabel>
 				<p:inputText id="txtCidade" required="true"
-					requiredMessage="Campo Cidade obrigatório"/>
+					requiredMessage="Campo Cidade obrigatório"
+					value="#{clienteController.cliente.cidade}"/>
 
 				<p:outputLabel value="Estado" for="txtEstado">
 				</p:outputLabel>
 				<p:inputText id="txtEstado" required="true"
-					requiredMessage="Campo Estado obrigatório"/>
+					requiredMessage="Campo Estado obrigatório"
+					value="#{clienteController.cliente.estado}"/>
 
 				<p:outputLabel value="Telefone" for="txtTelefone">
 				</p:outputLabel>
-				<p:inputMask id="txtTelefone" required="true" mask="(99) 9999-9999"
-					requiredMessage="Campo Telefone obrigatório"/>
+				<p:inputMask id="txtTelefone"  mask="(99)9999-9999"
+					value="#{clienteController.cliente.telefone}"/>
 
 				<p:outputLabel value="Email" for="txtEmail">
 				</p:outputLabel>
 				<p:inputText id="txtEmail" required="true"
-					requiredMessage="Campo Email obrigatório"/>
+					requiredMessage="Campo Email obrigatório"
+					value="#{clienteController.cliente.email}"/>
 
 				<p:outputLabel value="Dependentes" for="txtDependentes">
 				</p:outputLabel>
 				<p:inputText id="txtDependentes" required="true"
-					requiredMessage="Campo Dependentes obrigatório"/>
+					requiredMessage="Campo Dependentes obrigatório"
+					value="#{clienteController.cliente.dependentes}"/>
 				
 				<p:commandButton id="btnSalvar" update="growl" 
-				oncomplete="handleLoginRequest()" value="Cadastrar" icon="ui-icon-circle-check"/>
+				oncomplete="handleLoginRequest()" value="Cadastrar" icon="ui-icon-circle-check"
+				action="#{clienteController.incluir}"/>
 				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
 			</p:panelGrid>
 		</p:dialog>
