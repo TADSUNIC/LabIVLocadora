@@ -4,31 +4,33 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
 </h:head>
-
+<link type="text/css" rel="stylesheet" href="../../css/style.css" />
 <h:body>
-<h:form>
-
-	<p:growl id="growl" showDetail="true" life="3000"/>
-	
-		<p:dialog id="cadGenero" header="Cadastro de Genero"
-			widgetVar="cadGenero" modal="true" width="1000" height="500"
-			visible="true">
+	<h:form id="formCadGenero">
+		<p:growl id="growl" autoUpdate="true" life="3500" />
+		<p:dialog closable="true" visible="true" widgetVar="dlg"
+			header="Cadastrar Genero">
 			<p:panelGrid columns="2" styleClass="gridPanel">
 				<p:outputLabel value="Código" for="txtCodigo">
 				</p:outputLabel>
-				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
+				<p:inputText id="txtCodigo" value="#{generoBean.generoCodigo}"
+					readonly="true"></p:inputText>
 
 				<p:outputLabel value="Genero" for="txtGenero">
 				</p:outputLabel>
-				<p:inputText id="txtGenero" required="true" 
-				requiredMessage="Campo GENERO obrigatório" update="growl"></p:inputText>
-							
-				<p:commandButton id="btnSalvar" value="Salvar" ></p:commandButton>
+				<p:inputText id="txtGenero" required="true"
+					requiredMessage="Campo Genero obrigatório"
+					value="#{generoBean.generoDescricao}" update="growl"></p:inputText>
+
+
+				<p:commandButton id="salvar" update="growl" icon="ui-icon-circle-check"
+					value="Salvar" style="width:100px;" />
+				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
 			</p:panelGrid>
 		</p:dialog>
-
-</h:form>
+	</h:form>
 
 </h:body>
 </html>

@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form id="formCadEmpresa">
+
+		<p:growl id="growl" life="3500" />
+		<p:dialog closable="true" visible="true" widgetVar="dlg"
+			header="Devolução">
+			<p:panelGrid columns="2" styleClass="gridPanel">
+				<p:outputLabel value="Código" for="txtCodigo">
+				</p:outputLabel>
+				<p:inputText id="txtCodigo" readonly="true" disabled="true"></p:inputText>
+
+				<p:outputLabel value="Data da devolução" for="txtData">
+				</p:outputLabel>
+				<p:inputText id="txtData" type="Date" required="true"
+					requiredMessage="Selecione uma Data" />
+
+				<p:outputLabel value="Cliente" for="txtCliente">
+				</p:outputLabel>
+				<p:inputText id="txtCliente" required="true"
+					requiredMessage="Campo Cliente obrigatório" />
+			</p:panelGrid>
+
+			<p:commandButton value="Cadastrar" update="growl"
+				icon="ui-icon-circle-check" />
+			<p:commandButton value="Cancelar" icon="ui-icon-cancel"  onclick="dlg.hide();return false;"/>
+		</p:dialog>
+	</h:form>
+
+</h:body>
+
+</html>

@@ -4,75 +4,92 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
+	<link type="text/css" rel="stylesheet" href="../../css/style.css" />
 </h:head>
 
 <h:body>
-<h:form id="form">
+	<h:form id="formCadCliente">
 
-<p:growl id="growl" showDetail="true" life="3000"/>
-		<p:dialog id="cadCliente" header="Cadastro de Cliente"
-			widgetVar="cadCliente" modal="true" width="1000" height="500"
-			visible="true">
+		<p:growl id="growl" autoUpdate="true" life="3500" />
+		<p:dialog closable="true" visible="true" widgetVar="dlg" header="Cadastrar Cliente">
 			<p:panelGrid columns="4" styleClass="gridPanel">
 				<p:outputLabel value="Código" for="txtCodigo">
 				</p:outputLabel>
-				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
-
+				<p:inputText id="txtCodigo" readonly="true" ></p:inputText>
+				
 				<p:outputLabel value="Nome" for="txtNome">
 				</p:outputLabel>
-				<p:inputText id="txtNome"></p:inputText>
-				
+				<p:inputText id="txtNome" required="true"
+					requiredMessage="Campo Nomw obrigatório"/>
+					
 				<p:outputLabel value="RG" for="txtRg">
 				</p:outputLabel>
-				<p:inputText id="txtRg"></p:inputText>
-				
-				<p:outputLabel value="CPF" for="txtCpf">
+				<p:inputText id="txtRg" required="true"
+					requiredMessage="Campo RG obrigatório"/>
+
+				<p:outputLabel value="Cpf" for="txtCpf">
 				</p:outputLabel>
-				<p:inputText id="txtCpf" ></p:inputText>
+				<p:inputMask id="txtCpf" required="true" mask="999.999.999-99"
+ 					requiredMessage="Campo Cpf obrigatório" maxlength="11" />
 				
+
 				<p:outputLabel value="Data Nascimento" for="txtDtNascimento">
 				</p:outputLabel>
-				<p:inputText id="txtDtNascimento" type="Date" required="true" 
-				requiredMessage="Campo DATA NASCIMENTO obrigatório"></p:inputText>
-				
+				<p:inputText id="txtDtNascimento" type="Date" required="true"
+					requiredMessage="Campo Data Nascimento obrigatório"/>
+
 				<p:outputLabel value="Pai" for="txtNPai">
 				</p:outputLabel>
-				<p:inputText id="txtNPai"></p:inputText>
-				
+				<p:inputText id="txtNPai" required="true"
+					requiredMessage="Campo Pai obrigatório"/>
+
 				<p:outputLabel value="Mãe" for="txtNMae">
 				</p:outputLabel>
-				<p:inputText id="txtNMae"></p:inputText>
-				
+				<p:inputText id="txtNMae" required="true"
+					requiredMessage="Campo Mãe obrigatório"/>
+
 				<p:outputLabel value="Endereço" for="txtEndereco">
 				</p:outputLabel>
-				<p:inputText id="txtEndereco"></p:inputText>
-				
+				<p:inputText id="txtEndereco" required="true"
+					requiredMessage="Campo Endereco obrigatório"/>
+
 				<p:outputLabel value="Bairro" for="txtBairro">
 				</p:outputLabel>
-				<p:inputText id="txtBairro"></p:inputText>
-				
+				<p:inputText id="txtBairro" required="true"
+					requiredMessage="Campo Bairro obrigatório"/>
+
 				<p:outputLabel value="Cidade" for="txtCidade">
 				</p:outputLabel>
-				<p:inputText id="txtCidade"></p:inputText>
-	
+				<p:inputText id="txtCidade" required="true"
+					requiredMessage="Campo Cidade obrigatório"/>
+
 				<p:outputLabel value="Estado" for="txtEstado">
 				</p:outputLabel>
-				<p:inputText id="txtEstado"></p:inputText>
-				
+				<p:inputText id="txtEstado" required="true"
+					requiredMessage="Campo Estado obrigatório"/>
+
 				<p:outputLabel value="Telefone" for="txtTelefone">
 				</p:outputLabel>
-				<p:inputText id="txtTelefone"></p:inputText>
-				
+				<p:inputMask id="txtTelefone" required="true" mask="(99) 9999-9999"
+					requiredMessage="Campo Telefone obrigatório"/>
+
 				<p:outputLabel value="Email" for="txtEmail">
 				</p:outputLabel>
-				<p:inputText id="txtEmail"></p:inputText>
-				
+				<p:inputText id="txtEmail" required="true"
+					requiredMessage="Campo Email obrigatório"/>
+
 				<p:outputLabel value="Dependentes" for="txtDependentes">
 				</p:outputLabel>
-				<p:inputText id="txtDependentes"></p:inputText>
-
+				<p:inputText id="txtDependentes" required="true"
+					requiredMessage="Campo Dependentes obrigatório"/>
+				
+				<p:commandButton id="btnSalvar" update="growl" 
+				oncomplete="handleLoginRequest()" value="Cadastrar" icon="ui-icon-circle-check"/>
+				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
 			</p:panelGrid>
 		</p:dialog>
 	</h:form>
-	</h:body>
+	
+	
+</h:body>
 </html>

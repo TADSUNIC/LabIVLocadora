@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link type="text/css" rel="stylesheet" href="../../css/style.css" />
+</h:head>
+<h:body>
+	<h:form id="formCadEmpresa">
+
+		<p:growl id="growl" life="3500" />
+		<p:dialog closable="true" visible="true" widgetVar="dlg"
+			header="Cadastro da Descarte">
+			<p:panelGrid columns="2" styleClass="gridPanel">
+				<p:outputLabel value="Código" for="txtCodigo">
+				</p:outputLabel>
+				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
+
+				<p:outputLabel value="Midia" for="txtMidia">
+				</p:outputLabel>
+				<p:inputText id="txtMidia" readonly="true"></p:inputText>
+
+				<p:outputLabel value="Motivo" for="txtMotivo">
+				</p:outputLabel>
+				<p:inputTextarea id="txtMotivo" required="true"
+					requiredMessage="Campo Motivo obrigatório"></p:inputTextarea>
+
+			</p:panelGrid>
+				<p:dataTable paginator="true" rows="5"
+				emptyMessage="Não foi encontrado nenhuma informação!">
+				<p:column filterBy="">
+					<f:facet name="header">
+						<h:outputText value="ID"></h:outputText>
+					</f:facet>
+					<h:outputText value="Id da Midia" />
+				</p:column>
+
+				<p:column filterBy="">
+					<f:facet name="header">
+						<h:outputText value="Midia"></h:outputText>
+					</f:facet>
+					<h:outputText value="Nome da midia" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Status"></h:outputText>
+					</f:facet>
+				</p:column>
+			</p:dataTable>
+
+				<p:commandButton value="Cadastrar" update="growl"
+					icon="ui-icon-circle-check" />
+				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
+		</p:dialog>
+	</h:form>
+
+</h:body>
+</html>

@@ -4,5 +4,77 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
 </h:head>
+<link type="text/css" rel="stylesheet" href="../../css/style.css" />
+<h:body>
+<h:form id="formCadMidia" >
+	
+	<p:growl id="growl" autoUpdate="true" life="2500" />
+		<p:dialog closable="true" visible="true" widgetVar="dlg"
+			header="Cadastrar Midia">
+			<p:panelGrid columns="4" styleClass="gridPanel">
+				<p:outputLabel value="Código" for="txtCodigo">
+				</p:outputLabel>
+				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
+
+				<p:outputLabel value="Nome" for="txtNome" >
+				</p:outputLabel>
+				<p:inputText id="txtNome" required="true" 
+				requiredMessage="Campo Nome obrigatório" update="growl"></p:inputText>
+				
+				<p:outputLabel value="Diretor" for="txtDiretor" >
+				</p:outputLabel>
+				<p:inputText id="txtDiretor" required="true" 
+				requiredMessage="Campo Diretor obrigatório" update="growl"></p:inputText>
+				
+				<p:outputLabel value="Atores" for="txtAtores" >
+				</p:outputLabel>
+				<p:inputTextarea id="txtAtores" required="true" 
+				requiredMessage="Campo Atores obrigatório" update="growl"></p:inputTextarea>
+				
+				<p:outputLabel value="Sinopse" for="txtSinopse" >
+				</p:outputLabel>
+				<p:inputTextarea id="txtSinopse" required="true" 
+				requiredMessage="Campo Sinopse obrigatório" update="growl"></p:inputTextarea>
+				
+				<p:outputLabel value="Imagens" for="txtImagens" >
+				</p:outputLabel>
+				<p:fileUpload id="txtImagens" required="true" 
+				requiredMessage="Campo Imagens obrigatório" update="growl" ></p:fileUpload>
+				
+				<p:outputLabel value="Ano Lançamento" for="txtAnoLancamento">
+				</p:outputLabel>
+				<p:inputText id="txtAnoLancamento" type="Date" required="true" 
+				requiredMessage="Campo Ano Lançamento obrigatório" update="growl"></p:inputText>
+				
+				<p:outputLabel value="Genero" for="txtGenero">
+				</p:outputLabel>
+				<p:selectOneMenu id="txtGenero" required="true" 
+				requiredMessage="Campo Genero obrigatório" update="growl"></p:selectOneMenu>
+				
+				<p:outputLabel value="Classificação" for="txtClassificação">
+				</p:outputLabel>
+				<p:selectOneMenu id="txtClassificação" required="true" 
+				requiredMessage="Campo Classificação obrigatório" update="growl"></p:selectOneMenu>
+				
+				<p:outputLabel value="Categoria" for="txtCategoria">
+				</p:outputLabel>
+				<p:selectOneMenu id="txtCategoria" required="true" 
+				requiredMessage="Campo Categoria obrigatório" update="growl"></p:selectOneMenu>
+				
+				<p:commandButton id="btnSalvar" value="Salvar" update="growl" 
+				icon="ui-icon-circle-check"></p:commandButton>
+				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
+			</p:panelGrid>
+			</p:dialog>
+	</h:form>
+	<script type="text/javascript">
+		function handleLoginRequest() {
+			PF('dlg').jq.effect("explode", {
+				times : 5
+			}, 1000);
+		}
+	</script>
+	</h:body>
 </html>

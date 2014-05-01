@@ -4,55 +4,69 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
+	<link type="text/css" rel="stylesheet" href="../../css/style.css" />
 </h:head>
 <h:body>
-<h:form id="form">
-		<p:dialog id="cadEmpresa" header="Cadastro de Empresa"
-			widgetVar="cadEmpresa" modal="true" width="1000" height="500"
-			visible="true">
+	<h:form id="formCadEmpresa">
+
+		<p:growl id="growl" life="3500"  />
+		<p:dialog closable="true" visible="true" widgetVar="dlg"
+			header="Cadastro da Empresa">
 			<p:panelGrid columns="4" styleClass="gridPanel">
-				<p:outputLabel value="Código" for="txtCodigo" >
+				<p:outputLabel value="Código" for="txtCodigo">
 				</p:outputLabel>
-				<p:inputText id="txtCodigo" readonly="true"></p:inputText>
+				<p:inputText id="txtCodigo" readonly="true"/>
 
 				<p:outputLabel value="Nome Fantasia" for="txtNmFantasia">
 				</p:outputLabel>
-				<p:inputText id="txtNmFantasia"></p:inputText>
+				<p:inputText id="txtNmFantasia" required="true"
+					requiredMessage="Campo Nome Fantasia obrigatório"/>
 
-				<p:outputLabel value="Razão Social" for="txtRzSocial" >
+				<p:outputLabel value="Razão Social" for="txtRzSocial">
 				</p:outputLabel>
-				<p:inputText id="txtRzSocial"></p:inputText>
+				<p:inputText id="txtRzSocial" required="true"
+					requiredMessage="Campo Razão Social obrigatório"/>
 
-				<p:outputLabel value="CNPJ" for="txtCnpj">
+				<p:outputLabel value="Cnpj" for="txtCnpj">
 				</p:outputLabel>
-				<p:inputText id="txtCnpj"></p:inputText>
-				
+				<p:inputMask id="txtCnpj" required="true" maxlength="14" mask="99.999.999/9999-99"
+					requiredMessage="Campo Cnpj Fantasia obrigatório"/>
+
 				<p:outputLabel value="Endereço" for="txtEndereco">
 				</p:outputLabel>
-				<p:inputText id="txtEndereco"></p:inputText>
-				
+				<p:inputText id="txtEndereco" required="true"
+					requiredMessage="Campo Endereço obrigatório" />
+
 				<p:outputLabel value="Bairro" for="txtBairro">
 				</p:outputLabel>
-				<p:inputText id="txtBairro"></p:inputText>
-				
+				<p:inputText id="txtBairro" required="true"
+					requiredMessage="Campo Bairro obrigatório"/>
+
 				<p:outputLabel value="Cidade" for="txtCidade">
 				</p:outputLabel>
-				<p:inputText id="txtCidade"></p:inputText>
-	
+				<p:inputText id="txtCidade" required="true"
+					requiredMessage="Campo Cidade obrigatório"/>
+
 				<p:outputLabel value="Estado" for="txtEstado">
 				</p:outputLabel>
-				<p:inputText id="txtEstado"></p:inputText>
-				
+				<p:inputText id="txtEstado" required="true"
+					requiredMessage="Campo Estado obrigatório"/>
+
 				<p:outputLabel value="Telefone" for="txtTelefone">
 				</p:outputLabel>
-				<p:inputText id="txtTelefone"></p:inputText>
-				
+				<p:inputMask id="txtTelefone" required="true" mask="(99) 9999-9999" maxlength="10" 
+					requiredMessage="Campo Telefone obrigatório"/>
+
 				<p:outputLabel value="Email" for="txtEmail">
 				</p:outputLabel>
-				<p:inputText id="txtEmail"></p:inputText>
+				<p:inputText id="txtEmail" required="true"
+					requiredMessage="Campo Email obrigatório"/>
 
+				<p:commandButton value="Cadastrar" update="growl" icon="ui-icon-circle-check"/>
+				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
 			</p:panelGrid>
 		</p:dialog>
 	</h:form>
-	</h:body>
+	
+</h:body>
 </html>

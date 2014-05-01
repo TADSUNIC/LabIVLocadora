@@ -3,48 +3,79 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<style>
-.gridPanel{
-margin: auto;
 
-}
+<h:head>
+	<meta http-equiv="Content-Type" content="charset=utf-8" />
+	<title>Locadora - ZEO Vídeo</title>
+	<link type="text/css" rel="stylesheet" href="../css/style.css" />
+
+	<style type="text/css">
 .gridPanel tr,td {
-border: none !important;      
+	border: none !important;
+}
+
+.ui-widget {
+	font-size: 12px !important;
 }
 </style>
 
-	<TITLE>Locadora - ZEO Video</TITLE>
+
 </h:head>
 <h:body>
-	<h:form>
-		<p:menubar>
-			<p:submenu label="Cadastro">
-				<p:menuitem value="Empresa" />
-				<p:menuitem value="Cliente" />
-				<p:menuitem value="Funcionario" />
-				<p:menuitem value="Genero" />
-				<p:menuitem value="Midia" onclick="$('dlg2').show();">
-				</p:menuitem>
-			</p:submenu>
-			<p:submenu label="Listagem">
-				<p:menuitem value="Cliente" />
-				<p:menuitem value="Funcionario" />
-				<p:menuitem value="Genero" />
-				<p:menuitem value="Midia" />
-				<p:submenu label="Movimentação">
-					<p:menuitem value="Emprestimo" />
-					<p:menuitem value="Devolução" />
-					<p:menuitem value="Descarte" />
-				</p:submenu>
-			</p:submenu>
-			<p:submenu label="Movimentação">
-				<p:menuitem value="Emprestimo" />
-				<p:menuitem value="Devolução" />
-				<p:menuitem value="Descarte" />
+	<p:panel footer="ZeO - Vídeo Locadora" style="height:100%"
+		styleClass="fundoGradienteEscuro">
 
-			</p:submenu>
-		</p:menubar>
-	</h:form>
+		<h:form id="formMenuBar">
+			<p:growl id="growl" autoUpdate="true" showDetail="true" life="3500" />
+
+			<!-- ========================== Barra de Menu ========================== -->
+			<p:menubar autoDisplay="false" style="margin:0;">
+				<p:submenu label="Cadastro" icon="ui-icon-document">
+					<p:menuitem value="Empresa" url="cadastro/cadEmpresa.jsf"
+						target="conteudo" icon="ui-icon-circle-plus" />
+					<p:menuitem value="Cliente" url="cadastro/cadCliente.jsf" target="conteudo"
+						icon="ui-icon-circle-plus" />
+					<p:menuitem value="Funcionario" url="cadastro/cadFuncionario.jsf"
+						target="conteudo" icon="ui-icon-circle-plus" />
+					<p:menuitem value="Genero" url="cadastro/cadGenero.jsf"
+						target="conteudo" icon="ui-icon-circle-plus" />
+					<p:menuitem value="Midia" url="cadastro/cadMidia.jsf"
+						target="conteudo" icon="ui-icon-circle-plus" />
+				</p:submenu>
+				<p:submenu label="Listagem" icon="ui-icon-print">
+					<p:menuitem value="Cliente" icon="ui-icon-document" />
+					<p:menuitem value="Funcionario" icon="ui-icon-document" />
+					<p:menuitem value="Genero" icon="ui-icon-document" />
+					<p:menuitem value="Midia" icon="ui-icon-document" />
+					<p:submenu label="Movimentação">
+						<p:menuitem value="Emprestimo" icon="ui-icon-document" />
+						<p:menuitem value="Devolução" icon="ui-icon-document" />
+						<p:menuitem value="Descarte" icon="ui-icon-document" />
+					</p:submenu>
+				</p:submenu>
+				<p:submenu label="Movimentação" icon="ui-icon-cart">
+					<p:menuitem value="Emprestimo" url="movimentacao/movEmprestimo.jsf" 
+					target="conteudo" icon="ui-icon-arrowthick-1-e" />
+					<p:menuitem value="Devolução" url="movimentacao/movDevolucao.jsf" 
+					target="conteudo" icon="ui-icon-arrowthick-1-e" />
+					<p:menuitem value="Descarte" url="movimentacao/movDescarte.jsf" 
+					target="conteudo" icon="ui-icon-arrowthick-1-e" />
+
+				</p:submenu>
+
+
+
+			</p:menubar>
+
+		</h:form>
+
+
+		<iframe id="conteudo" width="100%" class="iFrame" height="100%">
+
+			<p:graphicImage styleClass="logo" value="../imgs/logo.png"
+				alt="ZeO Vídeo Locadora"></p:graphicImage>
+
+		</iframe>
+	</p:panel>
 </h:body>
 </html>

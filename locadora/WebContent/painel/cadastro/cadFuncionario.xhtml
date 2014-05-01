@@ -4,55 +4,65 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
+	<title></title>
 </h:head>
 
+<link type="text/css" rel="stylesheet" href="../../css/style.css" />
 
 <h:body>
-<h:form id="form" >
-	
-	<p:growl id="growl" showDetail="true" life="3500"/>
-	
-		<p:dialog id="cadCliente" header="Cadastro de Funcionario"
-			widgetVar="cadCliente" modal="true" width="1000" height="500"
-			visible="true" >
+	<h:form id="formCadFuncionario">
+
+		<p:growl id="growl" autoUpdate="true" life="2500" />
+		<p:dialog closable="true" visible="true" widgetVar="dlg"
+			header="Cadastrar Funcionário">
 			<p:panelGrid columns="2" styleClass="gridPanel">
 				<p:outputLabel value="Código" for="txtCodigo">
 				</p:outputLabel>
-				<p:inputText id="txtCodigo" readonly="true" autoupdate="growl" ></p:inputText>
+				<p:inputText id="txtCodigo" readonly="true" />
 
-				<p:outputLabel value="Nome" for="txtNome" >
+				<p:outputLabel value="Nome" for="txtNome">
 				</p:outputLabel>
-				<p:inputText id="txtNome" required="true" 
-				requiredMessage="Campo NOME obrigatório" ></p:inputText>
-				
+				<p:inputText id="txtNome" required="true"
+					requiredMessage="Campo Nome obrigatório" />
+
 				<p:outputLabel value="Data Admissão" for="txtDataAdm">
 				</p:outputLabel>
-				<p:inputText id="txtDataAdm" type="Date" required="true" 
-				requiredMessage="Campo DATA ADMISSÃO obrigatório"></p:inputText>
-				
-				<p:outputLabel value="CPF" for="txtCpf">
+				<p:inputText id="txtDataAdm" type="Date" required="true"
+					requiredMessage="Campo Data Admissão obrigatório" />
+
+				<p:outputLabel value="Cpf" for="txtCpf">
 				</p:outputLabel>
-				<p:inputText id="txtCpf" required="true" 
-				requiredMessage="Campo CPF obrigatório"></p:inputText>
+				<p:inputMask id="txtCpf" required="true" mask="999.999.999-99" maxlength="11" 
+					requiredMessage="Campo Cpf obrigatório" />
+					
+				<p:outputLabel value="Função" for="txtFuncao">
+				</p:outputLabel>
+				<p:inputText id="txtFuncao" required="true"
+					requiredMessage="Campo Função obrigatório" />
 				
+
 				<p:outputLabel value="Empresa" for="txtEmpresa">
 				</p:outputLabel>
-				<p:selectOneMenu id="txtEmpresa" required="true" 
-				requiredMessage="Campo EMPRESA obrigatório"></p:selectOneMenu>
-				
+				<p:selectOneMenu id="txtEmpresa" required="true"
+					requiredMessage="Campo Empresa obrigatório" />
+
 				<p:outputLabel value="Login" for="txtLogin">
 				</p:outputLabel>
-				<p:inputText id="txtLogin" required="true" 
-				requiredMessage="Campo LOGIN obrigatório"></p:inputText>
-				
+				<p:inputText id="txtLogin" required="true"
+					requiredMessage="Campo Login obrigatório" />
+
 				<p:outputLabel value="Senha" for="txtSenha">
 				</p:outputLabel>
-				<p:password id="txtSenha" required="true" 
-				requiredMessage="Campo SENHA obrigatório"></p:password>
-				
-				<p:commandButton id="btnSalvar" value="Salvar" ></p:commandButton>
+				<p:password id="txtSenha" required="true"
+					requiredMessage="Campo Senha obrigatório" />
+
+				<p:commandButton id="btnSalvar" update="growl" 
+				oncomplete="handleLoginRequest()" value="Salvar" icon="ui-icon-circle-check"></p:commandButton>
+				<p:commandButton value="Cancelar" icon="ui-icon-cancel" onclick="dlg.hide();return false;"/>
 			</p:panelGrid>
 		</p:dialog>
+
 	</h:form>
-	</h:body>
+	
+</h:body>
 </html>
